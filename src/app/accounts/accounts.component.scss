@@ -1,0 +1,61 @@
+.container {
+    padding: 2% 10%;
+    .box {
+        background-color: #fff;
+        box-shadow: 2px 2px #cacaca;
+
+        .account-header {
+            display: flex;
+            color: #DC143C;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 1% 2%;
+            border-bottom: 1px ridge #e1e1e1;
+        }
+
+        .grid {
+            .grid-header,
+            .grid-body,
+            .grid-footer {
+                display: flex;
+                border-bottom: 1px ridge #e1e1e1;
+            }
+
+            .grid-header {
+                font-weight: bold;
+                padding: 1% 2%;
+                border-bottom: 1px ridge #e1e1e1;
+
+                .account-number-header,
+                .account-type-header,
+                .account-balance-header {
+                    width: 30%;
+                }
+            }
+
+            .grid-body {
+                padding: 1% 2%;
+                align-items: center;
+
+                .account-number,
+                .account-type,
+                .account-balance {
+                    width: 30%;
+                }
+            } 
+
+            .grid-body:nth-child(odd) {
+                background-color: #f6f6f6;
+            }
+
+            .grid-footer {
+                padding: 1% 2%;
+                
+                .totalBalanceTitle {
+                    width: 30%;
+                    padding-left: 30%;
+                }
+            }
+        }
+    }
+}

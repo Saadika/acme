@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="box">
+    <div class="account-header">Account List</div>
+
+    <div class="grid">
+      <div class="grid-header">
+        <div class="account-number-header">Account Number</div>
+
+        <div class="account-type-header">Account Type</div>
+
+        <div class="account-balance-header">Balance</div>
+      </div>
+
+      <div *ngIf="accountResponse == null && accountResponse == undefined">
+        Loading
+      </div>
+
+      <div *ngIf="accountResponse !== null && accountResponse !== undefined">
+        <div class="grid-body" *ngFor="let account of accountResponse" >
+          <div class="account-number">{{account.account_number}}</div>
+  
+          <div class="account-type">{{account.account_type}}</div>
+  
+          <div class="account-balance">{{account.balance}}</div>
+  
+          <div class="button" >
+            <button mat-raised-button class="withdrawButton" color="primary" [ngStyle]="{disabled: !inValid}" (click)="withdrawSuccess(account)" [disabled]="(account.account_type == 'savings' && +account.balance < 1) || (account.account_type == 'cheque' && +account.balance < -501)">Withdraw</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-footer">
+        <div class="totalBalanceTitle">Balance</div>    
+        <div class="total">{{getTotalBalance()}}</div>
+      </div>
+    </div>
+  </div>
+</div>

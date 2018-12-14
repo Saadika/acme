@@ -1,0 +1,16 @@
+nav {
+    background: linear-gradient(to right, #DC143C, #800000);
+    color: #fff;
+    height: 10%;
+    display: flex;
+    align-items: center;
+
+    .nav {
+        padding: 0 10%;
+
+        h1 {
+            margin: 0;
+            text-transform: capitalize;
+        }
+    }
+}
